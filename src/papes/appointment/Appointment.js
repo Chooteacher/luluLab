@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { json, useNavigate } from 'react-router-dom';
 import { AppointmentWrap } from './Appointment.styled';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -7,8 +7,6 @@ import moment from 'moment';
 
 const Appointment = () => {
   const navigate = useNavigate();
-  const [appointList, setAppointList] = useState([]);
-  const [appointDateList, setAppointDateList] = useState([]);
   const [filterDateList, setFilterDateList] = useState([]);
   const [selectDate, setSelectDate] = useState('');
 
@@ -20,7 +18,7 @@ const Appointment = () => {
     if (selectDate === '') {
       alert('날짜를 선택해 주세요.');
     } else {
-      navigate('/registration', { state: { selectDate, appointList } });
+      navigate('/registration', { state: { selectDate } });
     }
   };
 
@@ -57,15 +55,30 @@ const Appointment = () => {
     fetch('data/Appointment.json')
       .then(res => res.json())
       .then(data => {
-        setAppointList(data.appointment);
-        setAppointDateList(getDate(data.appointment, []));
+        if (JSON.parse(localStorage.getItem('appointList')) == null) {
+          localStorage.setItem('appointList', JSON.stringify(data.appointment));
+        }
+        // setAppointList(data.appointment);
+        // setAppointDateList(getDate(data.appointment, []));
       });
   }, []);
 
   useEffect(() => {
+    localStorage.setItem(
+      'appointDateList',
+      JSON.stringify(
+        getDate(JSON.parse(localStorage.getItem('appointList')), [])
+      )
+    );
+
     let filterDate = [];
-    appointDateList.map(item => {
-      if (countByElement(appointDateList, item) == 8) {
+    JSON.parse(localStorage.getItem('appointDateList')).map(item => {
+      if (
+        countByElement(
+          JSON.parse(localStorage.getItem('appointDateList')),
+          item
+        ) == 8
+      ) {
         filterDate.push(convertDigitIn(item));
       }
 
@@ -73,7 +86,7 @@ const Appointment = () => {
         filterDate.filter((el, index) => filterDate.indexOf(el) === index)
       );
     });
-  }, [appointList]);
+  }, []);
 
   return (
     <AppointmentWrap>

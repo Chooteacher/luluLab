@@ -1,23 +1,55 @@
 import { RegistrationWrap } from './Registration.styled';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Registration = () => {
   const navigate = useNavigate();
-  const [userName, setUserName] = useState('');
-  const [ssn, setSsn] = useState('');
-  const [phoneNum, sePhoneNum] = useState('');
-  const [treatmentSubject, setTreatmentSubject] = useState('');
-
   const { state } = useLocation();
+  const [useTimeArr, setUseTimeArr] = useState([]);
+  const [registration, setRegistration] = useState({
+    name: '',
+    ssn: '',
+    phoneNum: '',
+    appointmentDate: state.selectDate,
+    appointmentTime: '',
+    treatmentSubject: '',
+  });
+
+  const timeArr = [
+    '09:00',
+    '10:00',
+    '11:00',
+    '13:00',
+    '14:00',
+    '15:00',
+    '16:00',
+    '17:00',
+  ];
+
+  const information = e => {
+    setRegistration({
+      ...registration,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const GoToAppointment = () => {
+    let arr = JSON.parse(localStorage.getItem('appointList'));
+    arr.push(registration);
+    localStorage.setItem('appointList', JSON.stringify(arr));
+    alert('예약이 완료 되었습니다.');
     navigate('/');
   };
 
-  // const userNameHandler = (e) => {
-
-  // }
+  useEffect(() => {
+    let timeArr = [];
+    JSON.parse(localStorage.getItem('appointList')).map(item => {
+      if (item.appointmentDate === state.selectDate) {
+        timeArr.push(item.appointmentTime);
+      }
+    });
+    setUseTimeArr(timeArr);
+  }, []);
 
   // 주민번호 13자
   // 진료과목 2자 이상
@@ -36,15 +68,30 @@ const Registration = () => {
           <form>
             <div>
               <label htmlFor="name">이름</label>
-              <input id="name" placeholder="실명을 입력해주세요"></input>
+              <input
+                id="name"
+                name="name"
+                placeholder="실명을 입력해주세요"
+                onChange={information}
+              ></input>
             </div>
             <div>
               <label htmlFor="ssn">주민번호</label>
-              <input id="ssn" placeholder="- 를 빼고 입력해주세요"></input>
+              <input
+                id="ssn"
+                name="ssn"
+                placeholder="- 를 빼고 입력해주세요"
+                onChange={information}
+              ></input>
             </div>
             <div>
               <label htmlFor="phoneNum">전화번호</label>
-              <input id="phoneNum" placeholder="- 를 빼고 입력해주세요"></input>
+              <input
+                id="phoneNum"
+                name="phoneNum"
+                placeholder="- 를 빼고 입력해주세요"
+                onChange={information}
+              ></input>
             </div>
             <div>
               <label>예약날짜</label>
@@ -55,16 +102,32 @@ const Registration = () => {
               ></input>
             </div>
             <div className="timeSelecter">
-              <label name="time">예약시간</label>
-              <select name="time" form="form">
-                <option>시간넣으쇼</option>
+              <label name="appointmentTime">예약시간</label>
+              <select
+                id="appointmentTime"
+                name="appointmentTime"
+                form="form"
+                onChange={information}
+              >
+                <option>예약 가능한 시간</option>
+                {timeArr.map(appointmentTime => {
+                  if (!useTimeArr.includes(appointmentTime)) {
+                    return (
+                      <option key={appointmentTime} value={appointmentTime}>
+                        {appointmentTime}
+                      </option>
+                    );
+                  }
+                })}
               </select>
             </div>
             <div>
               <label htmlFor="treatmentSubject">진료과목</label>
               <input
                 id="treatmentSubject"
+                name="treatmentSubject"
                 placeholder="ex) 신경외과, 일반외과, 피부과"
+                onChange={information}
               ></input>
             </div>
             <button className="registrationBtn" onClick={GoToAppointment}>
