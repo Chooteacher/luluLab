@@ -12,11 +12,15 @@ const Appointment = () => {
   const [filterDateList, setFilterDateList] = useState([]);
   const [selectDate, setSelectDate] = useState('');
 
+  const goToInquiry = () => {
+    navigate('/inquiry');
+  };
+
   const goToRegistration = () => {
     if (selectDate === '') {
       alert('날짜를 선택해 주세요.');
     } else {
-      navigate('/registration', { state: { selectDate } });
+      navigate('/registration', { state: { selectDate, appointList } });
     }
   };
 
@@ -61,7 +65,7 @@ const Appointment = () => {
   useEffect(() => {
     let filterDate = [];
     appointDateList.map(item => {
-      if (countByElement(appointDateList, item) == 9) {
+      if (countByElement(appointDateList, item) == 8) {
         filterDate.push(convertDigitIn(item));
       }
 
@@ -106,12 +110,12 @@ const Appointment = () => {
               </span>
             </div>
             <div className="appointBtn">
-              <span className="appointBtnTitle">상담예약</span>
+              <span className="appointBtnTitle">예약조회</span>
               <img src="/images/telephone.png" />
-              <span className="appointBtnText">
-                전문상담원이
+              <span className="appointBtnText" onClick={goToInquiry}>
+                예약된 내역을
                 <br />
-                의료진 추천을 도와드립니다.
+                확인하세요.
               </span>
             </div>
             <p className="notice">

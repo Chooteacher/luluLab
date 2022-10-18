@@ -11,8 +11,8 @@ const Registration = () => {
 
   const { state } = useLocation();
 
-  const GoToInquiry = () => {
-    navigate('/inquiry');
+  const GoToAppointment = () => {
+    navigate('/');
   };
 
   // const userNameHandler = (e) => {
@@ -67,7 +67,7 @@ const Registration = () => {
                 placeholder="ex) 신경외과, 일반외과, 피부과"
               ></input>
             </div>
-            <button className="registrationBtn" onClick={GoToInquiry}>
+            <button className="registrationBtn" onClick={GoToAppointment}>
               진료 예약
             </button>
           </form>
