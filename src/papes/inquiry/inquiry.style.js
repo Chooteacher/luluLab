@@ -71,6 +71,10 @@ export const InquiryWrap = styled.div`
         background-color: #e1e9f2;
         cursor: pointer;
       }
+
+      .inquiryBtn:hover {
+        border: 1px solid #85a2c3;
+      }
     }
 
     .notice {

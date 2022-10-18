@@ -26,7 +26,11 @@ const Inquiry = () => {
           <form onSubmit={stopEvent} action="/send">
             <div>
               <label htmlFor="name">예약자명</label>
-              <input id="name" placeholder="실명을 입력해주세요"></input>
+              <input
+                id="name"
+                placeholder="실명을 입력해주세요"
+                autofocus
+              ></input>
             </div>
             <div>
               <label htmlFor="ssn">주민번호</label>
@@ -64,6 +68,7 @@ const modalStyle = {
     width: '1200px',
     top: '40%',
     left: '50%',
+    padding: '2.188rem',
     background: '#fafafa',
     display: 'flex',
     borderradius: '10px',
