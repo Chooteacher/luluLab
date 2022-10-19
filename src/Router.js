@@ -5,7 +5,7 @@ import Inquiry from './papes/inquiry/Inquiry';
 
 const Router = () => {
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="registration" element={<Registration />} />
