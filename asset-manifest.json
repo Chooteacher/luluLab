@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/luluLab/static/css/main.4dc65e61.css",
+    "main.js": "/luluLab/static/js/main.66b66f47.js",
+    "index.html": "/luluLab/index.html",
+    "main.4dc65e61.css.map": "/luluLab/static/css/main.4dc65e61.css.map",
+    "main.66b66f47.js.map": "/luluLab/static/js/main.66b66f47.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4dc65e61.css",
+    "static/js/main.66b66f47.js"
+  ]
+}
