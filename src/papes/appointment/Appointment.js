@@ -1,9 +1,9 @@
 import { React, useState, useEffect } from 'react';
-import { json, useNavigate } from 'react-router-dom';
-import { AppointmentWrap } from './Appointment.styled';
+import { useNavigate } from 'react-router-dom';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
 import moment from 'moment';
+import { AppointmentWrap } from './Appointment.styled';
+import 'react-calendar/dist/Calendar.css';
 
 const Appointment = () => {
   const navigate = useNavigate();
@@ -58,8 +58,6 @@ const Appointment = () => {
         if (JSON.parse(localStorage.getItem('appointList')) == null) {
           localStorage.setItem('appointList', JSON.stringify(data.appointment));
         }
-        // setAppointList(data.appointment);
-        // setAppointDateList(getDate(data.appointment, []));
       });
   }, []);
 
@@ -115,17 +113,17 @@ const Appointment = () => {
           <div className="appointBody">
             <div className="appointBtn" onClick={goToRegistration}>
               <span className="appointBtnTitle">진료예약</span>
-              <img src="/images/document.png" />
+              <img src="/images/telephone.png" alt="진료예약의 전화기아이콘" />
               <span className="appointBtnText">
                 원하시는 날짜를 선택 후
                 <br />
                 예약 해주세요.
               </span>
             </div>
-            <div className="appointBtn">
+            <div className="appointBtn" onClick={goToInquiry}>
               <span className="appointBtnTitle">예약조회</span>
-              <img src="/images/telephone.png" />
-              <span className="appointBtnText" onClick={goToInquiry}>
+              <img src="/images/document.png" alt="예약조회의 문서아이콘" />
+              <span className="appointBtnText">
                 예약된 내역을
                 <br />
                 확인하세요.

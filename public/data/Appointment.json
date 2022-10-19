@@ -9,6 +9,30 @@
       "treatmentSubject": "신경외과"
     },
     {
+      "name": "이은지",
+      "ssn": "9307252015262",
+      "phoneNum": "01012345678",
+      "appointmentDate": "2022-11-02",
+      "appointmentTime": "09:00",
+      "treatmentSubject": "신경외과"
+    },
+    {
+      "name": "이은지",
+      "ssn": "9307252015262",
+      "phoneNum": "01012345678",
+      "appointmentDate": "2022-11-08",
+      "appointmentTime": "09:00",
+      "treatmentSubject": "신경외과"
+    },
+    {
+      "name": "이은지",
+      "ssn": "9307252015262",
+      "phoneNum": "01012345678",
+      "appointmentDate": "2022-11-11",
+      "appointmentTime": "09:00",
+      "treatmentSubject": "신경외과"
+    },
+    {
       "name": "조경준",
       "ssn": "9102121031412",
       "phoneNum": "01045676547",

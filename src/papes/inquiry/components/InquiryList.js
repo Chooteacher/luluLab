@@ -1,6 +1,22 @@
+import { useEffect, useState } from 'react';
 import { InquiryListWrap } from './InquiryList.styled';
 
-const InquiryList = ({ setModalOpen }) => {
+const InquiryList = ({ setModalOpen, userInfo }) => {
+  const [appointList, setAppointList] = useState(
+    JSON.parse(localStorage.getItem('appointList'))
+  );
+  const [myAppointList, setMyAppointList] = useState([]);
+
+  useEffect(() => {
+    let userInfoArr = [];
+    appointList.map(item => {
+      if (item.name == userInfo.name && item.ssn == userInfo.ssn) {
+        userInfoArr.push(item);
+      }
+    });
+    setMyAppointList(userInfoArr);
+  });
+
   return (
     <InquiryListWrap>
       <table>
@@ -14,40 +30,17 @@ const InquiryList = ({ setModalOpen }) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>김땡</td>
-            <td>010-9999-9999</td>
-            <td>2022/10/10</td>
-            <td>13시</td>
-            <td>내과</td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td>김땡</td>
-            <td>010-9999-9999</td>
-            <td>2022/10/10</td>
-            <td>13시</td>
-            <td>내과</td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td>김땡</td>
-            <td>010-9999-9999</td>
-            <td>2022/10/10</td>
-            <td>13시</td>
-            <td>내과</td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td>김땡</td>
-            <td>010-9999-9999</td>
-            <td>2022/10/10</td>
-            <td>13시</td>
-            <td>내과</td>
-          </tr>
+          {myAppointList.map(item => {
+            return (
+              <tr>
+                <td>{item.name}</td>
+                <td>{item.phoneNum}</td>
+                <td>{item.appointmentDate}</td>
+                <td>{item.appointmentTime}</td>
+                <td>{item.treatmentSubject}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
       <button className="listClose" onClick={() => setModalOpen(false)}>

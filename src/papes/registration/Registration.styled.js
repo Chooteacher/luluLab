@@ -7,7 +7,7 @@ export const RegistrationWrap = styled.div`
     .registrationHeader {
       max-width: 68.75rem;
       margin: 0 auto;
-      margin-top: 0.938rem;
+      margin-top: 3.938rem;
       margin-bottom: 3rem;
       text-align: center;
       border-bottom: 0.063rem solid #a0a6ac;

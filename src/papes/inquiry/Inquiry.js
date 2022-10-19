@@ -5,6 +5,17 @@ import InquiryList from '../inquiry/components/InquiryList';
 
 const Inquiry = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [userInfo, setUserInfo] = useState({
+    name: '',
+    ssn: '',
+  });
+
+  const information = e => {
+    setUserInfo({
+      ...userInfo,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const inquiryBtn = () => {
     setModalOpen(true);
@@ -28,20 +39,27 @@ const Inquiry = () => {
               <label htmlFor="name">예약자명</label>
               <input
                 id="name"
+                name="name"
                 placeholder="실명을 입력해주세요"
-                autofocus
+                onChange={information}
+                autoFocus
               ></input>
             </div>
             <div>
               <label htmlFor="ssn">주민번호</label>
-              <input id="ssn" placeholder="- 를 빼고 입력해주세요"></input>
+              <input
+                id="ssn"
+                name="ssn"
+                placeholder="- 를 빼고 입력해주세요"
+                onChange={information}
+              ></input>
             </div>
             <button className="inquiryBtn" onClick={inquiryBtn}>
               조회하기
             </button>
           </form>
           <Modal isOpen={modalOpen} style={modalStyle}>
-            <InquiryList setModalOpen={setModalOpen} />
+            <InquiryList setModalOpen={setModalOpen} userInfo={userInfo} />
           </Modal>
         </div>
         <div className="notice">
