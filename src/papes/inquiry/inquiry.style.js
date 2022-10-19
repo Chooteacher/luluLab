@@ -7,7 +7,7 @@ export const InquiryWrap = styled.div`
     .inquiryHeader {
       max-width: 68.75rem;
       margin: 0 auto;
-      margin-top: 3.938rem;
+      margin-top: 2rem;
       margin-bottom: 3rem;
       text-align: center;
       border-bottom: 0.063rem solid #a0a6ac;
@@ -64,6 +64,19 @@ export const InquiryWrap = styled.div`
         width: 6.25rem;
         height: 2.5rem;
         margin-top: 0.938rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 0.625rem;
+        background-color: #e1e9f2;
+        cursor: pointer;
+      }
+
+      .goToAppointment {
+        width: 6.25rem;
+        height: 2.5rem;
+        margin-top: 0.938rem;
+        margin-right: 10px;
         font-size: 1rem;
         font-weight: 600;
         border: none;

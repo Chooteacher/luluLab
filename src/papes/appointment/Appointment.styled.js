@@ -7,7 +7,7 @@ export const AppointmentWrap = styled.div`
     .appointHeader {
       max-width: 68.75rem;
       margin: 0 auto;
-      margin-top: 3.938rem;
+      margin-top: 2rem;
       margin-bottom: 3rem;
       border-bottom: 0.063rem solid #a0a6ac;
       text-align: center;

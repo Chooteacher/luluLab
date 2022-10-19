@@ -1,15 +1,20 @@
 import { InquiryWrap } from './inquiry.style';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import InquiryList from '../inquiry/components/InquiryList';
 
 const Inquiry = () => {
+  const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({
     name: '',
     ssn: '',
   });
 
+  const goToAppointment = () => {
+    navigate('/');
+  };
   const information = e => {
     setUserInfo({
       ...userInfo,
@@ -18,7 +23,17 @@ const Inquiry = () => {
   };
 
   const inquiryBtn = () => {
-    setModalOpen(true);
+    if (userInfo.name == '') {
+      alert('이름을 입력해주세요.');
+    } else if (
+      userInfo.ssn == '' ||
+      userInfo.ssn.length != 13 ||
+      userInfo.ssn.includes('-')
+    ) {
+      alert('주민번호를 확인해주세요.');
+    } else {
+      setModalOpen(true);
+    }
   };
 
   const stopEvent = e => {
@@ -54,6 +69,9 @@ const Inquiry = () => {
                 onChange={information}
               ></input>
             </div>
+            <button className="goToAppointment" onClick={goToAppointment}>
+              예약하기
+            </button>
             <button className="inquiryBtn" onClick={inquiryBtn}>
               조회하기
             </button>

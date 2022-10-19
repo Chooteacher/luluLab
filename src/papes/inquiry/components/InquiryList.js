@@ -15,10 +15,13 @@ const InquiryList = ({ setModalOpen, userInfo }) => {
       }
     });
     setMyAppointList(userInfoArr);
-  });
+  }, [appointList]);
 
   return (
     <InquiryListWrap>
+      <div className="userInfoName">
+        <span>{userInfo.name}님의 예약 정보입니다.</span>
+      </div>
       <table>
         <thead>
           <tr>
@@ -32,7 +35,7 @@ const InquiryList = ({ setModalOpen, userInfo }) => {
         <tbody>
           {myAppointList.map(item => {
             return (
-              <tr>
+              <tr key="myAppointList">
                 <td>{item.name}</td>
                 <td>{item.phoneNum}</td>
                 <td>{item.appointmentDate}</td>
@@ -43,9 +46,16 @@ const InquiryList = ({ setModalOpen, userInfo }) => {
           })}
         </tbody>
       </table>
-      <button className="listClose" onClick={() => setModalOpen(false)}>
-        확인
-      </button>
+      <div className="notice">
+        <span>예약은 1년까지 조회가 가능합니다.</span>
+        <br></br>
+        <span>기간이 지난 정보는 병원으로 문의해주세요.</span>
+      </div>
+      <div>
+        <button className="listClose" onClick={() => setModalOpen(false)}>
+          확인
+        </button>
+      </div>
     </InquiryListWrap>
   );
 };

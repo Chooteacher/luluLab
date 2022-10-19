@@ -33,12 +33,31 @@ const Registration = () => {
     });
   };
 
-  const GoToAppointment = () => {
-    let arr = JSON.parse(localStorage.getItem('appointList'));
-    arr.push(registration);
-    localStorage.setItem('appointList', JSON.stringify(arr));
-    alert('예약이 완료 되었습니다.');
-    navigate('/');
+  const goToAppointment = () => {
+    if (registration.name == '') {
+      alert('이름을 입력해주세요.');
+    } else if (
+      registration.ssn == '' ||
+      registration.ssn.length != 13 ||
+      registration.ssn.includes('-')
+    ) {
+      alert('주민번호를 확인해주세요.');
+    } else if (
+      registration.phoneNum == '' ||
+      registration.phoneNum.includes('-')
+    ) {
+      alert('전화번호를 확인해주세요.');
+    } else if (registration.appointmentTime == '') {
+      alert('예약시간을 확인해주세요.');
+    } else if (registration.treatmentSubject == '') {
+      alert('진료과목을 확인해주세요.');
+    } else {
+      let arr = JSON.parse(localStorage.getItem('appointList'));
+      arr.push(registration);
+      localStorage.setItem('appointList', JSON.stringify(arr));
+      alert('예약이 완료 되었습니다.');
+      navigate('/');
+    }
   };
 
   useEffect(() => {
@@ -51,6 +70,9 @@ const Registration = () => {
     setUseTimeArr(timeArr);
   }, []);
 
+  const stopEvent = e => {
+    e.preventDefault();
+  };
   // 주민번호 13자
   // 진료과목 2자 이상
   // 이름 2자 이상
@@ -65,7 +87,7 @@ const Registration = () => {
           </div>
         </div>
         <div className="registrationContents">
-          <form>
+          <form onSubmit={stopEvent}>
             <div>
               <label htmlFor="name">이름</label>
               <input
@@ -130,7 +152,7 @@ const Registration = () => {
                 onChange={information}
               ></input>
             </div>
-            <button className="registrationBtn" onClick={GoToAppointment}>
+            <button className="registrationBtn" onClick={goToAppointment}>
               진료 예약
             </button>
           </form>

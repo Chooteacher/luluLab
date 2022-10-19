@@ -1,9 +1,17 @@
 import styled from 'styled-components';
 
 export const InquiryListWrap = styled.div`
-  margin-top: 0.938rem;
   text-align: center;
   color: #292929;
+
+  .userInfoName {
+    margin-bottom: 20px;
+
+    span {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
 
   table {
     width: 62.5rem;
@@ -18,7 +26,8 @@ export const InquiryListWrap = styled.div`
   .listClose {
     width: 6.25rem;
     height: 2.5rem;
-    margin-top: 1.875rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     font-size: 1rem;
     font-weight: 600;
     border: none;
@@ -29,5 +38,14 @@ export const InquiryListWrap = styled.div`
 
   .listClose:hover {
     border: 1px solid #85a2c3;
+  }
+
+  .notice {
+    margin-top: 15px;
+
+    span {
+      font-size: 18px;
+      font-weight: 600;
+    }
   }
 `;
