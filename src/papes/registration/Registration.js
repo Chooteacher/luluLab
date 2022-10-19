@@ -7,6 +7,7 @@ const Registration = () => {
   const { state } = useLocation();
   const [useTimeArr, setUseTimeArr] = useState([]);
   const [registration, setRegistration] = useState({
+    id: JSON.parse(localStorage.getItem('appointList')).length,
     name: '',
     ssn: '',
     phoneNum: '',
@@ -73,10 +74,6 @@ const Registration = () => {
   const stopEvent = e => {
     e.preventDefault();
   };
-  // 주민번호 13자
-  // 진료과목 2자 이상
-  // 이름 2자 이상
-  // 전화번호 11자
 
   return (
     <RegistrationWrap>

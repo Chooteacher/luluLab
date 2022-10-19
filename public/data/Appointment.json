@@ -1,6 +1,7 @@
 {
   "appointment": [
     {
+      "id": 0,
       "name": "이은지",
       "ssn": "9307252015262",
       "phoneNum": "01012345678",
@@ -9,6 +10,7 @@
       "treatmentSubject": "신경외과"
     },
     {
+      "id": 1,
       "name": "이은지",
       "ssn": "9307252015262",
       "phoneNum": "01012345678",
@@ -16,15 +18,9 @@
       "appointmentTime": "09:00",
       "treatmentSubject": "신경외과"
     },
+
     {
-      "name": "이은지",
-      "ssn": "9307252015262",
-      "phoneNum": "01012345678",
-      "appointmentDate": "2022-11-08",
-      "appointmentTime": "09:00",
-      "treatmentSubject": "신경외과"
-    },
-    {
+      "id": 2,
       "name": "이은지",
       "ssn": "9307252015262",
       "phoneNum": "01012345678",
@@ -33,6 +29,7 @@
       "treatmentSubject": "신경외과"
     },
     {
+      "id": 3,
       "name": "이은지",
       "ssn": "9307252015262",
       "phoneNum": "01012345678",
@@ -41,6 +38,7 @@
       "treatmentSubject": "신경외과"
     },
     {
+      "id": 4,
       "name": "조경준",
       "ssn": "9102121031412",
       "phoneNum": "01045676547",
@@ -49,6 +47,7 @@
       "treatmentSubject": "일반외과"
     },
     {
+      "id": 5,
       "name": "박명배",
       "ssn": "9310081013452",
       "phoneNum": "01015379845",
@@ -57,6 +56,7 @@
       "treatmentSubject": "소아과"
     },
     {
+      "id": 6,
       "name": "최수환",
       "ssn": "9201121134262",
       "phoneNum": "01087651234",
@@ -65,6 +65,7 @@
       "treatmentSubject": "비뇨기과"
     },
     {
+      "id": 7,
       "name": "김지은",
       "ssn": "9612252764521",
       "phoneNum": "01057645623",
@@ -73,6 +74,7 @@
       "treatmentSubject": "피부과"
     },
     {
+      "id": 8,
       "name": "나주경",
       "ssn": "8901252034765",
       "phoneNum": "01018745578",
@@ -81,6 +83,7 @@
       "treatmentSubject": "이비인후과"
     },
     {
+      "id": 9,
       "name": "박순자",
       "ssn": "6802222034125",
       "phoneNum": "01013545689",
@@ -89,6 +92,7 @@
       "treatmentSubject": "안과"
     },
     {
+      "id": 10,
       "name": "박찬슬",
       "ssn": "9506291050419",
       "phoneNum": "01011245354 ",
@@ -97,6 +101,7 @@
       "treatmentSubject": "흉부외과"
     },
     {
+      "id": 11,
       "name": "이나리",
       "ssn": "9508292020456",
       "phoneNum": "01052655234 ",
@@ -105,6 +110,7 @@
       "treatmentSubject": "흉부외과"
     },
     {
+      "id": 12,
       "name": "박찬슬",
       "ssn": "9506291050419",
       "phoneNum": "01011245354 ",
@@ -113,6 +119,7 @@
       "treatmentSubject": "흉부외과"
     },
     {
+      "id": 13,
       "name": "박순자",
       "ssn": "6802222034125",
       "phoneNum": "01013545689",
