@@ -38,7 +38,7 @@ const Appointment = () => {
   };
 
   const dateValidation = date => {
-    if (date < moment()) {
+    if (date < moment() || date.getDay() == 0) {
       setSelectDate('');
       alert('선택 불가능 한 날짜입니다.');
     } else if (
@@ -102,7 +102,8 @@ const Appointment = () => {
                   filterDateList.find(
                     x => x === moment(date).format('DD-MM-YYYY')
                   ) ||
-                  date < moment()
+                  date < moment() ||
+                  date.getDay() == 0
                 ) {
                   return 'duplicateDate';
                 }

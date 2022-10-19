@@ -5,10 +5,10 @@ export const InquiryListWrap = styled.div`
   color: #292929;
 
   .userInfoName {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 
     span {
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: 600;
     }
   }
@@ -37,14 +37,14 @@ export const InquiryListWrap = styled.div`
   }
 
   .listClose:hover {
-    border: 1px solid #85a2c3;
+    border: 0.063rem solid #85a2c3;
   }
 
   .notice {
-    margin-top: 15px;
+    margin-top: 0.638rem;
 
     span {
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: 600;
     }
   }

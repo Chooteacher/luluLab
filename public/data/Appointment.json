@@ -33,6 +33,14 @@
       "treatmentSubject": "신경외과"
     },
     {
+      "name": "이은지",
+      "ssn": "9307252015262",
+      "phoneNum": "01012345678",
+      "appointmentDate": "2021-12-14",
+      "appointmentTime": "09:00",
+      "treatmentSubject": "신경외과"
+    },
+    {
       "name": "조경준",
       "ssn": "9102121031412",
       "phoneNum": "01045676547",
@@ -95,6 +103,22 @@
       "appointmentDate": "2022-11-01",
       "appointmentTime": "17:00",
       "treatmentSubject": "흉부외과"
+    },
+    {
+      "name": "박찬슬",
+      "ssn": "9506291050419",
+      "phoneNum": "01011245354 ",
+      "appointmentDate": "2022-11-01",
+      "appointmentTime": "13:00",
+      "treatmentSubject": "흉부외과"
+    },
+    {
+      "name": "박순자",
+      "ssn": "6802222034125",
+      "phoneNum": "01013545689",
+      "appointmentDate": "2022-11-01",
+      "appointmentTime": "16:00",
+      "treatmentSubject": "안과"
     }
   ]
 }

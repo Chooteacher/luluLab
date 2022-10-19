@@ -89,7 +89,7 @@ export const RegistrationWrap = styled.div`
       }
 
       .registrationBtn:hover {
-        border: 1px solid #85a2c3;
+        border: 0.063rem solid #85a2c3;
       }
     }
 

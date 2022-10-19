@@ -76,7 +76,7 @@ export const InquiryWrap = styled.div`
         width: 6.25rem;
         height: 2.5rem;
         margin-top: 0.938rem;
-        margin-right: 10px;
+        margin-right: 0.625rem;
         font-size: 1rem;
         font-weight: 600;
         border: none;
@@ -86,7 +86,7 @@ export const InquiryWrap = styled.div`
       }
 
       .inquiryBtn:hover {
-        border: 1px solid #85a2c3;
+        border: 0.063rem solid #85a2c3;
       }
     }
 
