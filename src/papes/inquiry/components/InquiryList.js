@@ -47,7 +47,7 @@ const InquiryList = ({ setModalOpen, userInfo }) => {
         </tbody>
       </table>
       <div className="notice">
-        <span>예약은 1년까지 조회가 가능합니다.</span>
+        <span>예약된 정보는 1년까지 조회가 가능합니다.</span>
         <br></br>
         <span>기간이 지난 정보는 병원으로 문의해주세요.</span>
       </div>

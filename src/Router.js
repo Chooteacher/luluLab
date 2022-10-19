@@ -5,7 +5,7 @@ import Inquiry from './papes/inquiry/Inquiry';
 
 const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="registration" element={<Registration />} />
