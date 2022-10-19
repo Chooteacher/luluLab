@@ -52,7 +52,7 @@ const Appointment = () => {
   };
 
   useEffect(() => {
-    fetch('data/Appointment.json')
+    fetch('/luluLab/data/Appointment.json')
       .then(res => res.json())
       .then(data => {
         if (JSON.parse(localStorage.getItem('appointList')) == null) {
