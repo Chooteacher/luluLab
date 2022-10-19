@@ -114,7 +114,10 @@ const Appointment = () => {
           <div className="appointBody">
             <div className="appointBtn" onClick={goToRegistration}>
               <span className="appointBtnTitle">진료예약</span>
-              <img src="/images/telephone.png" alt="진료예약의 전화기아이콘" />
+              <img
+                src="/luluLab/images/telephone.png"
+                alt="진료예약의 전화기아이콘"
+              />
               <span className="appointBtnText">
                 원하시는 날짜를 선택 후
                 <br />
@@ -123,7 +126,10 @@ const Appointment = () => {
             </div>
             <div className="appointBtn" onClick={goToInquiry}>
               <span className="appointBtnTitle">예약조회</span>
-              <img src="/images/document.png" alt="예약조회의 문서아이콘" />
+              <img
+                src="/luluLab/images/document.png"
+                alt="예약조회의 문서아이콘"
+              />
               <span className="appointBtnText">
                 예약된 내역을
                 <br />
