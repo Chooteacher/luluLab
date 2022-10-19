@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/luluLab/static/css/main.4dc65e61.css",
-    "main.js": "/luluLab/static/js/main.b9a80150.js",
+    "main.js": "/luluLab/static/js/main.388368be.js",
     "index.html": "/luluLab/index.html",
     "main.4dc65e61.css.map": "/luluLab/static/css/main.4dc65e61.css.map",
-    "main.b9a80150.js.map": "/luluLab/static/js/main.b9a80150.js.map"
+    "main.388368be.js.map": "/luluLab/static/js/main.388368be.js.map"
   },
   "entrypoints": [
     "static/css/main.4dc65e61.css",
-    "static/js/main.b9a80150.js"
+    "static/js/main.388368be.js"
   ]
 }
